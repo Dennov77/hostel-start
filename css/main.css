@@ -495,9 +495,7 @@ p {
   align-items: end;
   justify-items: center;
   background-color: #0e2818;
-  background-image:
-    linear-gradient(180deg, rgba(4, 20, 11, 0.18), rgba(3, 22, 11, 0.74)),
-    var(--hero-home-bg, transparent);
+  background-image: linear-gradient(180deg, rgba(4, 20, 11, 0.18), rgba(3, 22, 11, 0.74));
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
