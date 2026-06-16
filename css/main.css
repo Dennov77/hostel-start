@@ -497,7 +497,7 @@ p {
   background-color: #0e2818;
   background-image:
     linear-gradient(180deg, rgba(4, 20, 11, 0.18), rgba(3, 22, 11, 0.74)),
-    var(--hero-home-bg, url('./img/gallery/max/vishgal1.png'));
+    var(--hero-home-bg, transparent);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
