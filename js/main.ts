@@ -204,14 +204,14 @@ function normalizeHeroBackgrounds(): void {
       return;
     }
 
-    const match = inlineStyle.match(/url\\((['"]?)([^'")]+)\\1\\)/i);
+    const match = inlineStyle.match(/url\((['"]?)([^'")]+)\1\)/i);
     if (!match || !match[2]) {
       return;
     }
 
     const rawUrl = match[2].trim();
 
-    if (/^https?:\\/\\//i.test(rawUrl) || /^data:/i.test(rawUrl)) {
+    if (/^https?:\/\//i.test(rawUrl) || /^data:/i.test(rawUrl)) {
       return;
     }
 

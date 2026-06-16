@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
-function resolveBasePath(): string {
-  const base = process.env.VITE_BASE_PATH?.trim();
+function resolveBasePath() {
+  const base = (process.env.VITE_BASE_PATH || './').trim();
 
   if (!base || base === './') {
     return './';
