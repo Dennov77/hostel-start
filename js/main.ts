@@ -27,8 +27,9 @@ function normalizePath(value: string): string {
       return '/';
     }
 
-    if (path === '/index.html') {
-      return '/';
+    if (/\/index\.html$/.test(path)) {
+      const withoutIndex = path.replace(/\/index\.html$/i, '');
+      return withoutIndex || '/';
     }
 
     return path;
@@ -194,6 +195,35 @@ function setupGalleryFallback(): void {
   }
 }
 
+function normalizeHeroBackgrounds(): void {
+  const heroSections = document.querySelectorAll<HTMLElement>('.hero-section, .hero-section1');
+
+  heroSections.forEach(section => {
+    const inlineStyle = section.getAttribute('style');
+    if (!inlineStyle) {
+      return;
+    }
+
+    const match = inlineStyle.match(/url\\((['"]?)([^'")]+)\\1\\)/i);
+    if (!match || !match[2]) {
+      return;
+    }
+
+    const rawUrl = match[2].trim();
+
+    if (/^https?:\\/\\//i.test(rawUrl) || /^data:/i.test(rawUrl)) {
+      return;
+    }
+
+    try {
+      const normalizedUrl = new URL(rawUrl, document.baseURI).href;
+      section.setAttribute('style', inlineStyle.replace(match[0], `url('${normalizedUrl}')`));
+    } catch {
+      return;
+    }
+  });
+}
+
 function setupNavAccessibility(): void {
   const nav = document.querySelector<HTMLElement>('.navbar');
   if (!nav) {
@@ -217,6 +247,7 @@ function setupNavAccessibility(): void {
 
 function init(): void {
   setActiveNavLink();
+  normalizeHeroBackgrounds();
   setupFloatingBookingButton();
   setupRevealAnimations();
   setupQuickScroll();

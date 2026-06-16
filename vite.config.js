@@ -1,8 +1,18 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
+function resolveBasePath(): string {
+  const base = process.env.VITE_BASE_PATH?.trim();
+
+  if (!base || base === './') {
+    return './';
+  }
+
+  return base.endsWith('/') ? base : `${base}/`;
+}
+
 export default defineConfig({
-  base: './',
+  base: resolveBasePath(),
   root: '.',
   build: {
     outDir: 'dist',
