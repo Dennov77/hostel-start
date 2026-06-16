@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#2E7D32">
+    <meta name="description" content="Сеть хостелов «Старт» в Москве рядом со станциями метро: Тушинская, Гончарная, Текстильщики, Дербеневская. Чистые комнаты, Wi‑Fi, удобная локация и бронирование напрямую.">
+    <meta name="keywords" content="хостел москва, хостелы старт, хостел рядом с метро, недорогой хостел москва, бронь хостела москва">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Хостел Старт">
+    <link rel="canonical" href="https://hostel-start.ru/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Хостел Старт | Комфортное проживание в Москве">
+    <meta property="og:description" content="Сеть хостелов «Старт» в 4 локациях у станций метро в Москве. Выбирайте подходящий и бронируйте номер онлайн.">
+    <meta property="og:url" content="https://hostel-start.ru/">
+    <meta property="og:image" content="https://hostel-start.ru/img/logostart.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Хостел Старт | Комфортное проживание в Москве">
+    <meta name="twitter:description" content="Сеть хостелов «Старт» рядом с метро в Москве. Чистые номера, Wi‑Fi, удобное расположение и удобная бронь.">
+    <meta name="twitter:image" content="https://hostel-start.ru/img/logostart.png">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="/clover.ico">
+    <title>Хостел Старт | Комфорт может быть недорогим!</title>
+</head>
+<body>
+    <div class="site-topbar">
+        <div class="topbar-inner">
+            <span><i class="fa fa-subway mr-2"></i>Сеть хостелов рядом с метро</span>
+            <span><i class="fa fa-phone mr-2"></i><a href="tel:+79776850707">+7 (977) 685-07-07</a></span>
+            <span><i class="fa fa-map-marker-alt mr-2"></i>Москва — удобная сеть в 4 локациях</span>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-links">
+                <a href="/" class="nav-link active">
+                    <span class="metro-icon2"><i class="fa fa-house"></i></span>
+                    <span>Главная</span>
+                </a>
+                <a href="/tushinskaya.html" class="nav-link">
+                    <span class="metro-icon metro-line-tushinskaya">М</span>
+                    <span>Тушинская</span>
+                </a>
+                <a href="/goncharnaya.html" class="nav-link">
+                    <span class="metro-icon metro-line-goncharnaya">М</span>
+                    <span>Гончарная</span>
+                </a>
+                <a href="/saratovskaya.html" class="nav-link">
+                    <span class="metro-icon metro-line-saratovskaya">М</span>
+                    <span>Текстильщики</span>
+                </a>
+                <a href="/derbenevskaya.html" class="nav-link">
+                    <span class="metro-icon metro-line-derbenevskaya">М</span>
+                    <span>Дербеневская</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="site-main">
+        <section class="hero-section" style="--hero-home-bg:url('/img/gallery/max/vishgal1.png')">
+            <div class="hero-content">
+                <img src="/img/logostart.png" alt="Хостел Старт" class="nav-logo mx-auto mb-4">
+                <p class="hero-stats"><i class="fa fa-star text-yellow-400"></i> 4 города</p>
+                <h1 class="hero-title">Комфортное проживание в Москве</h1>
+                <p class="hero-subtitle">Сеть хостелов «Старт» — тихо, чисто и с полной инфраструктурой. Забронируйте номер с проверенной ценой и хорошим расположением.</p>
+                <div class="hero-feature-bar">
+                    <span class="metro-line-badge metro-tushinskaya">Тушинская</span>
+                    <span class="metro-line-badge metro-goncharnaya">Гончарная</span>
+                    <span class="metro-line-badge metro-saratovskaya">Текстильщики</span>
+                    <span class="metro-line-badge metro-derbenevskaya">Дербеневская</span>
+                </div>
+                <a href="#locations" class="hero-button1">Выбрать хостел</a>
+            </div>
+        </section>
+
+        <section id="network-map" class="section mb-12">
+            <h2 class="title">Сеть хостелов на карте Москвы</h2>
+
+            <div class="network-map-shell">
+                <div id="hostel-map" class="network-map-canvas" aria-label="Интерактивная карта всех хостелов Старт"></div>
+                <div class="network-map-legend">
+                    <article class="card network-map-meta-card">
+                        <h3 class="text-xl font-semibold mb-3">Местоположение</h3>
+Все хостелы находятся в пешей доступности от метро (10 мин). Выберите локацию чтобы узнать больше
+</article>
+                    <a href="/tushinskaya.html" class="card network-map-meta-card network-link-card">
+                        <span class="metro-line-badge metro-tushinskaya">Тушинская</span>
+                        <p>Вишневая, м.Тушинская</p>
+                    </a>
+                    <a href="/goncharnaya.html" class="card network-map-meta-card network-link-card">
+                        <span class="metro-line-badge metro-goncharnaya">Гончарная</span>
+                        <p>Гончарная наб., м. Гончарная</p>
+                    </a>
+                    <a href="/saratovskaya.html" class="card network-map-meta-card network-link-card">
+                        <span class="metro-line-badge metro-saratovskaya">Текстильщики</span>
+                        <p>Ул. Саратовская, 18/10</p>
+                    </a>
+                    <a href="/derbenevskaya.html" class="card network-map-meta-card network-link-card">
+                        <span class="metro-line-badge metro-derbenevskaya">Дербеневская</span>
+                        <p>Набережная Дербеневская</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="locations" class="section mb-12">
+            <h2 class="title">Посмотреть хостел</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="card">
+                    <a href="/tushinskaya.html" class="block">
+                        <img src="/img/gallery/max/vishgal1.png" class="card-img-top" alt="Старт Вишневая" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-center">Старт Вишневая</h3>
+                            <p class="text-center text-gray-600 station-pill station-tushinskaya">Тушинская</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a href="/goncharnaya.html" class="block">
+                        <img src="/img/gallery/max/tag2.png" class="card-img-top" alt="Старт Гончарная" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-center">Старт Гончарная</h3>
+                            <p class="text-center text-gray-600 station-pill station-goncharnaya">Гончарная</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a href="/saratovskaya.html" class="block">
+                        <img src="/img/gallery/max/sargal1.png" class="card-img-top" alt="Старт Саратовская" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-center">Старт Саратовская</h3>
+                            <p class="text-center text-gray-600 station-pill station-saratovskaya">Текстильщики</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a href="/derbenevskaya.html" class="block">
+                        <img src="/img/gallery/max/dergal2.jpg" class="card-img-top" alt="Старт Дербеневская" loading="lazy">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-center">Старт Дербеневская</h3>
+                            <p class="text-center text-gray-600 station-pill station-derbenevskaya">Дербеневская</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="services" class="section mb-12">
+            <h2 class="title">Сервис</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <article class="card p-4">
+                    <img src="/img/services/wifi.png" alt="Wi-Fi" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Бесплатный Wi-Fi</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/tv.png" alt="TV" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Кабельное TV</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/games.png" alt="Games" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Настольные игры</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/shower.png" alt="Shower" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Душевая кабина</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/dryer.png" alt="Dryer" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Фен</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/iron.png" alt="Iron" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Утюг</h5>
+                </article>
+            </div>
+        </section>
+
+        <section id="services-addons" class="section mb-12">
+            <h2 class="title">Дополнительные услуги</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <article class="card p-4">
+                    <img src="/img/services/tickets.png" alt="Tickets" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Бронирование билетов</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/taxi.png" alt="Taxi" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Заказ трансфера</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/safe.png" alt="Safe" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Камера хранения</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/washer.png" alt="Washer" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Стиральная машина</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/delivery.png" alt="Delivery" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Заказ еды</h5>
+                </article>
+                <article class="card p-4">
+                    <img src="/img/services/breakfast.png" alt="Breakfast" class="mx-auto mb-4 w-16 h-16">
+                    <h5 class="text-center text-sm font-medium">Завтрак</h5>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-12 rounded-lg p-4 text-center">
+        <a href="#locations" class="text-white no-underline hover:text-gray-200">Выбрать локацию</a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script>
+        (function () {
+          const hostels = [
+            {
+              name: 'Старт Вишневая',
+              address: 'м.Тушинская, Вишневая',
+              color: 'tushinskaya',
+              url: '/tushinskaya.html',
+              lat: 55.834603,
+              lng: 37.446713
+            },
+            {
+              name: 'Старт Гончарная',
+              address: 'Гончарная наб., м.Гончарная',
+              color: 'goncharnaya',
+              url: '/goncharnaya.html',
+              lat: 55.739589,
+              lng: 37.649464
+            },
+            {
+              name: 'Старт Саратовская',
+              address: 'ул. Саратовская, м.Текстильщики',
+              color: 'saratovskaya',
+              url: '/saratovskaya.html',
+              lat: 55.715189,
+              lng: 37.74211
+            },
+            {
+              name: 'Старт Дербеневская',
+              address: 'Дербеневская наб.',
+              color: 'derbenevskaya',
+              url: '/derbenevskaya.html',
+              lat: 55.719718,
+              lng: 37.648768
+            }
+          ];
+
+          const rootStyles = getComputedStyle(document.documentElement);
+          const mapNode = document.getElementById('hostel-map');
+          if (!mapNode || !window.L) {
+            return;
+          }
+
+          const getMetroColor = (line) => {
+            const color = rootStyles.getPropertyValue(`--metro-${line}`).trim();
+            return color || '#2e7d32';
+          };
+
+          const map = L.map('hostel-map', {
+            scrollWheelZoom: false,
+            zoomControl: true,
+            attributionControl: true
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(map);
+
+          const syncMapHeight = () => {
+            const legend = document.querySelector('.network-map-legend');
+            if (!legend || window.innerWidth < 1024) {
+              mapNode.style.height = '';
+              map.invalidateSize();
+              return;
+            }
+
+            const targetHeight = legend.getBoundingClientRect().height;
+            mapNode.style.height = `${Math.round(targetHeight)}px`;
+            map.invalidateSize();
+          };
+
+          hostels.forEach((hostel, index) => {
+            const lineColor = getMetroColor(hostel.color);
+            const markerHtml = `<button class="network-pin" style="--line:${lineColor}; --pin-delay:${index * 330}ms" aria-label="${hostel.name}" type="button"><span>${index + 1}</span></button>`;
+
+            const icon = L.divIcon({
+              html: markerHtml,
+              className: 'network-pin-wrap',
+              iconSize: [42, 42],
+              iconAnchor: [21, 21]
+            });
+
+            const marker = L.marker([hostel.lat, hostel.lng], { icon })
+              .bindPopup(`<strong>${hostel.name}</strong><br>${hostel.address}`);
+
+            marker.on('click', () => {
+              window.location.href = hostel.url;
+            });
+
+            marker.addTo(map);
+          });
+
+          const bounds = L.latLngBounds(hostels.map(hostel => [hostel.lat, hostel.lng]));
+          map.fitBounds(bounds, { padding: [24, 24], maxZoom: 12 });
+          syncMapHeight();
+          window.addEventListener('resize', syncMapHeight);
+        })();
+    </script>
+    <script type="module" src="/js/main.ts"></script>
+</body>
+</html>
